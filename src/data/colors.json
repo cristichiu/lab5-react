@@ -1,0 +1,14 @@
+[
+  { "index": 1, "color": "#000000" },
+  { "index": 2, "color": "#FFFFFF" },
+  { "index": 3, "color": "#FF0000" },
+  { "index": 4, "color": "#FFA500" },
+  { "index": 5, "color": "#FFFF00" },
+  { "index": 6, "color": "#00FF00" },
+  { "index": 7, "color": "#00FFFF" },
+  { "index": 8, "color": "#0000FF" },
+  { "index": 9, "color": "#8000FF" },
+  { "index": 10, "color": "#FF00FF" },
+  { "index": 11, "color": "#A52A2A" },
+  { "index": 12, "color": "#808080" }
+]
