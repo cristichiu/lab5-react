@@ -12,11 +12,8 @@ function App() {
   const [draws, setDraws] = useState([])
   const [isDrawing, setIsDrawing] = useState(false)
   const paint = (x, y) => {
-    setGrid(prev => {
-      const newGrid = prev.map(row => [...row])
-      newGrid[y][x] = color
-      return newGrid
-    })
+    grid[y][x] = color
+    setGrid([...grid])
   }
 
   const handleMouseDown = () => {
