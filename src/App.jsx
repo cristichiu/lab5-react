@@ -40,6 +40,9 @@ function App() {
   const selectDraw = (id) => {
     setGrid(draws.find(p => p.id === id).grid)
   }
+  const colorInput = (value) => {
+    setColor(value.target.value)
+  }
   return (
     <>
     <div className='flex items-center flex-col m-5 gap-5'>
@@ -50,6 +53,7 @@ function App() {
             { colors.map(c => {
               return <div key={c.index} onClick={() => setColor(c.color)} className={`w-8 h-8 rounded-full border border-slate-800/20 hover:scale-110 cursor-pointer ${c.color === color && 'outline-2 outline-slate-600 outline-offset-2'}`} style={{ background: c.color }}></div>
             }) }
+            <input onChange={colorInput} type="color" className={`w-8 h-8 rounded-full border border-slate-800/20 hover:scale-110 cursor-pointer outline-2 outline-slate-600 outline-offset-2`} />
           </div>
           <div className='flex gap-2'>
             <button className='py-1 px-4 bg-slate-500 rounded-xl text-zinc-100 cursor-pointer' onClick={saveDraw}>save</button>
@@ -67,7 +71,7 @@ function App() {
         </div>
         <div className='flex flex-col gap-5'>
             { draws.map(d => {
-              return <div className='flex flex-col gap-1' onClick={() => selectDraw(d.id)}>
+              return <div key={d.id} className='flex flex-col gap-1' onClick={() => selectDraw(d.id)}>
                 <Canva key={d.id} isMini={true} grid={d.grid} />
                 <button onClick={() => deleteDraw(d.id)} className='border cursor-pointer hover:bg-slate-600/50'>delete</button>
                 <button onClick={() => selectDraw(d.id)} className='border cursor-pointer hover:bg-slate-600/50'>apply</button>
